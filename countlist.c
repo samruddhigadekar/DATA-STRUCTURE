@@ -4,7 +4,7 @@
 typedef struct node
 {
 	int data;
-    struct node *next;
+       node *next;
 }NODE;
  node *create(node *list)
 {

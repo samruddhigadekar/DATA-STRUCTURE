@@ -1,20 +1,20 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-struct node
+typedef struct node
 {
 	int data;
     struct node *next;
 }NODE;
-struct node *create(struct node *list)
+ node *create(node *list)
 {
-	struct node *newnode,*temp;
+	node *newnode,*temp;
 	int i,num;
 	printf("enter limit:");
 	scanf("%d",&num);
 	for(i=0;i<num;i++)
 	{
-		newnode=(struct node *)malloc(sizeof(struct node));
+		newnode=(node *)malloc(sizeof( node));
 		newnode->next=NULL;
 		printf("enter element:");
 		scanf("%d",&newnode->data);
@@ -29,18 +29,18 @@ struct node *create(struct node *list)
 	}
 return list;
 }
-void *display(struct node *list)
+void *display( node *list)
 {
-	struct node *temp=list;
+       node *temp=list;
 	while(temp!=NULL)
 	{
 		printf("%d\t",temp->data);
 		temp=temp->next;		
 	}
 }
-int count(struct node *list)
+int count( node *list)
 {
-	struct node *temp=list;
+   node *temp=list;
     int cnt=0;
     while(temp!=NULL)
     {
@@ -51,7 +51,7 @@ int count(struct node *list)
 }
 void main()
 {
-	struct node *list=NULL;
+	 node *list=NULL;
 	list=create(list);
     display(list);
     list=count(list);
